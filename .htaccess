@@ -1,22 +1,5 @@
-RewriteEngine on
-
-# Redirect to domain without www.
-RewriteCond %{HTTPS} off
-RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
-RewriteRule .* http://%1%{REQUEST_URI} [R=301,L]
-
-# Same for HTTPS:
-RewriteCond %{HTTPS} on
-RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
-RewriteRule .* https://%1%{REQUEST_URI} [R=301,L]
-
-# Redirect to another domain: pera.soft.
-RewriteCond %{HTTPS} off
-RewriteRule .* https://pera.soft%{REQUEST_URI} [R=301,L]
-
-# Same for HTTPS:
-RewriteCond %{HTTPS} on
-RewriteRule .* https://pera.soft%{REQUEST_URI} [R=301,L]
-
-# Prevent directory listings
-Options All -Indexes
+Options +FollowSymLinks
+RewriteEngine On
+RewriteBase /
+RewriteCond %{HTTP_HOST} ^pera-soft\.github.io$ [NC]
+RewriteRule ^(.*)$ https://pera.software [R=301,L]
