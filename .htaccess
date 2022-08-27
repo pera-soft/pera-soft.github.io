@@ -12,12 +12,10 @@ RewriteRule .* https://%1%{REQUEST_URI} [R=301,L]
 
 # Redirect to another domain: pera.soft.
 RewriteCond %{HTTPS} off
-RewriteCond %{HTTP_HOST} !^(www\.)?pera\.soft$ [NC]
-RewriteRule .* http://pera.soft%{REQUEST_URI} [R=301,L]
+RewriteRule .* https://pera.soft%{REQUEST_URI} [R=301,L]
 
 # Same for HTTPS:
 RewriteCond %{HTTPS} on
-RewriteCond %{HTTP_HOST} !^(www\.)?pera\.soft$ [NC]
 RewriteRule .* https://pera.soft%{REQUEST_URI} [R=301,L]
 
 # Prevent directory listings
