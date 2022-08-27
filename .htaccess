@@ -8,3 +8,7 @@ Redirect 301 / https://pera.software
 
 RewriteCond %{HTTP_HOST} ^(www\.)?pera-soft\.github.io$
 RewriteRule ^ https://pera.software%{REQUEST_URI} [NE,L,R] 
+
+
+RewriteCond %{HTTP_HOST} ^(www\.)?pera-soft\.github.io$
+RewriteRule ^(.*)$ https://pera.software/$1 [R=301,L]
