@@ -1,5 +1,2 @@
-Options +FollowSymLinks
 RewriteEngine On
-RewriteBase /
-RewriteCond %{HTTP_HOST} ^pera-soft\.github.io$ [NC]
-RewriteRule ^(.*)$ https://pera.software [R=301,L]
+RewriteRule ^(.*)$ https://pera.software [R=301]
